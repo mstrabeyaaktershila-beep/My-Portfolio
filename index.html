@@ -350,14 +350,14 @@ const PROJECTS = [
     media: {
       type: "gallery",
       items: [
-        { type: "image", src: "R1.jpg" },
-        { type: "image", src: "R2.jpg" },
-        { type: "image", src: "R3.jpg" },
-        { type: "image", src: "R5.jpg" },
-        { type: "image", src: "R6.jpg" },
-        { type: "image", src: "R7.jpg" },
-        { type: "image", src: "R8.jpg" },
-        { type: "image", src: "R9.jpg" }
+        { type: "image", src: "r1.png" },
+        { type: "image", src: "r2.png" },
+        { type: "image", src: "r3.png" },
+        { type: "image", src: "r5.png" },
+        { type: "image", src: "r6.png" },
+        { type: "image", src: "r7.png" },
+        { type: "image", src: "r8.png" },
+        { type: "image", src: "r9.png" }
       ]
     } 
   },
@@ -387,11 +387,12 @@ function updateGalleryContent(){
   const countEl = document.getElementById('gallery-count');
   if(container && currentGalleryItems.length > 0){
     const item = currentGalleryItems[currentItemIndex];
-    if(item.type === 'video' || (typeof item === 'string' && item.match(/\.(mp4|webm|ogg)$/i))){
-      const src = typeof item === 'string' ? item : item.src;
+    const src = typeof item === 'string' ? item : item.src;
+    const isVideo = item.type === 'video' || (typeof item === 'string' && item.match(/\.(mp4|webm|ogg)$/i));
+
+    if(isVideo){
       container.innerHTML = `<video src="${src}" controls playsinline style="max-height:100%; max-width:100%; object-fit:contain;"></video>`;
     } else {
-      const src = typeof item === 'string' ? item : item.src;
       container.innerHTML = `<img src="${src}" style="max-height:100%; max-width:100%; object-fit:contain;">`;
     }
     if(countEl) countEl.innerText = `${currentItemIndex + 1} / ${currentGalleryItems.length}`;
