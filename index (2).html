@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mst Rabeya Akter Shila — Social Media Growth & Content Strategist</title>
+<meta name="description" content="Mst Rabeya Akter Shila — Instagram & TikTok growth expert and content creation strategist for brands, creators and e-commerce.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#12131a;
+  --bg-soft:#181a23;
+  --surface:#1f2129;
+  --surface-2:#25272f;
+  --ink:#f2efe6;
+  --ink-dim:#c7c3b6;
+  --muted:#8b8880;
+  --line:rgba(242,239,230,.09);
+  --line-strong:rgba(242,239,230,.16);
+  --gold:#cf9d4e;
+  --gold-soft:#e6bd76;
+  --gold-dim:rgba(207,157,78,.15);
+  --teal:#7fa596;
+  --teal-dim:rgba(127,165,150,.15);
+  --serif:'Fraunces',Georgia,serif;
+  --sans:'Inter',Arial,sans-serif;
+  --mono:'IBM Plex Mono',monospace;
+  --maxw:1180px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{text-decoration:none;color:inherit}
+img{display:block;max-width:100%}
+.shell{width:min(var(--maxw),calc(100% - 64px));margin:0 auto}
+::selection{background:var(--gold);color:#1a1305}
+
+/* ---------- header ---------- */
+header{position:sticky;top:0;z-index:50;background:rgba(18,19,26,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.header-inner{height:80px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:var(--serif);font-size:19px;font-weight:600;letter-spacing:.01em}
+.logo span{color:var(--gold)}
+.nav{display:flex;align-items:center;gap:36px}
+.nav a{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--ink-dim);transition:color .2s}
+.nav a:hover{color:var(--gold-soft)}
+.nav .hire{border:1px solid var(--line-strong);padding:9px 18px;border-radius:999px;color:var(--ink)}
+.nav .hire:hover{border-color:var(--gold);color:var(--gold-soft)}
+.menu-btn{display:none;background:none;border:0;color:var(--ink);font-size:22px;cursor:pointer}
+
+/* ---------- eyebrow / labels ---------- */
+.eyebrow{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.16em;color:var(--gold);display:flex;align-items:center;gap:10px}
+.eyebrow::before{content:'';width:26px;height:1px;background:var(--gold)}
+
+/* ---------- hero ---------- */
+.hero{padding:96px 0 80px;border-bottom:1px solid var(--line);position:relative;overflow:hidden}
+.hero:before{content:'';position:absolute;top:-120px;right:-160px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(207,157,78,.14),transparent 70%);pointer-events:none}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:60px;align-items:center;position:relative;z-index:1}
+.hero h1{font-family:var(--serif);font-weight:600;font-size:clamp(44px,6vw,74px);line-height:1.03;letter-spacing:-.01em;margin:22px 0 24px}
+.hero h1 em{font-style:italic;font-weight:500;color:var(--gold-soft)}
+.hero-sub{font-size:17px;color:var(--ink-dim);max-width:480px;line-height:1.7;margin:0 0 34px}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+.btn{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.1em;padding:15px 26px;border-radius:999px;display:inline-flex;align-items:center;gap:8px;transition:.2s}
+.btn-primary{background:var(--gold);color:#1a1305;font-weight:500}
+.btn-primary:hover{background:var(--gold-soft)}
+.btn-ghost{border:1px solid var(--line-strong);color:var(--ink)}
+.btn-ghost:hover{border-color:var(--ink-dim)}
+.hero-stats{display:flex;gap:34px;margin-top:52px;padding-top:30px;border-top:1px solid var(--line)}
+.hero-stats div b{display:block;font-family:var(--serif);font-size:26px;font-weight:600;color:var(--gold-soft)}
+.hero-stats div span{font-size:12px;color:var(--muted)}
+.portrait-wrap{position:relative;display:flex;justify-content:center}
+.portrait-frame{position:relative;width:340px;border-radius:14px;overflow:hidden;border:1px solid var(--line-strong);background:var(--surface)}
+.portrait-frame img{width:100%;height:420px;object-fit:cover;object-position:top center}
+.portrait-tag{position:absolute;left:-18px;bottom:26px;background:var(--bg-soft);border:1px solid var(--line-strong);border-radius:10px;padding:14px 18px;font-family:var(--mono);font-size:11px;color:var(--ink-dim);letter-spacing:.03em;box-shadow:0 20px 40px -20px rgba(0,0,0,.6)}
+.portrait-tag b{display:block;color:var(--gold-soft);font-size:12px;margin-bottom:2px;font-family:var(--sans);font-weight:600}
+
+/* ---------- sections ---------- */
+section{padding:100px 0;border-bottom:1px solid var(--line)}
+.section-head{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:56px}
+.section-head h2{font-family:var(--serif);font-weight:600;font-size:clamp(34px,4.5vw,52px);line-height:1.06;margin:16px 0 0}
+.section-head p{color:var(--ink-dim);font-size:15px;line-height:1.75;max-width:420px;margin:0}
+
+/* ---------- about ---------- */
+.about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:64px;align-items:start}
+.about-photo{border-radius:14px;overflow:hidden;border:1px solid var(--line-strong)}
+.about-photo img{width:100%;height:440px;object-fit:cover;object-position:top center}
+.about-copy p{font-size:16px;color:var(--ink-dim);line-height:1.85;margin:0 0 20px}
+.about-copy b{color:var(--ink);font-weight:600}
+.skills{display:flex;flex-wrap:wrap;gap:9px;margin-top:32px}
+.skill{border:1px solid var(--line-strong);padding:9px 16px;border-radius:999px;font-family:var(--mono);font-size:11px;color:var(--ink-dim);letter-spacing:.03em}
+
+/* ---------- services ---------- */
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.card{background:var(--bg);padding:32px 26px;min-height:210px;transition:background .25s}
+.card:hover{background:var(--bg-soft)}
+.card .num{font-family:var(--mono);font-size:11px;color:var(--gold);letter-spacing:.08em}
+.card h4{font-family:var(--serif);font-weight:600;margin:22px 0 12px;font-size:21px}
+.card p{font-size:13px;color:var(--muted);line-height:1.7;margin:0}
+
+/* ---------- experience ---------- */
+.timeline{display:flex;flex-direction:column}
+.tl-row{display:grid;grid-template-columns:180px 1fr;gap:28px;padding:26px 0;border-top:1px solid var(--line)}
+.tl-row:last-child{border-bottom:1px solid var(--line)}
+.tl-date{font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--gold);padding-top:4px}
+.tl-body h4{font-family:var(--serif);font-weight:600;font-size:19px;margin:0 0 8px}
+.tl-body h4 span{color:var(--muted);font-weight:400;font-size:15px;font-family:var(--sans)}
+.tl-body p{margin:0;color:var(--ink-dim);font-size:14px;line-height:1.75;max-width:640px}
+
+/* ---------- portfolio ---------- */
+.portfolio-layout{display:grid;grid-template-columns:1fr 1.05fr;gap:20px;align-items:start}
+.project-list{border-top:1px solid var(--line)}
+.project-item{width:100%;text-align:left;background:none;border:0;border-bottom:1px solid var(--line);padding:20px 4px;cursor:pointer;display:grid;grid-template-columns:32px 1fr 20px;align-items:center;gap:16px;color:var(--ink);font-family:var(--sans)}
+.project-item .p-num{font-family:var(--mono);font-size:11px;color:var(--muted)}
+.project-item .p-title{font-size:14px;font-weight:500;letter-spacing:.01em;line-height:1.5}
+.project-item .p-tag{display:block;font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-top:5px}
+.project-item .p-arrow{font-size:16px;color:var(--muted);transition:.2s}
+.project-item:hover .p-title{color:var(--gold-soft)}
+.project-item.active{background:var(--surface)}
+.project-item.active .p-num,.project-item.active .p-arrow{color:var(--gold)}
+.project-item.active .p-title{color:var(--gold-soft)}
+.project-item.active .p-arrow{transform:translateX(3px)}
+.preview-panel{position:sticky;top:100px;border:1px solid var(--line-strong);border-radius:14px;background:var(--surface);overflow:hidden}
+.preview-media{aspect-ratio:4/3;background:var(--bg-soft);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.preview-media img,.preview-media video{width:100%;height:100%;object-fit:cover}
+.preview-empty{text-align:center;padding:36px;color:var(--muted)}
+.preview-empty .icon{width:52px;height:52px;border-radius:12px;border:1px solid var(--line-strong);display:flex;align-items:center;justify-content:center;margin:0 auto 18px;font-size:20px;color:var(--gold)}
+.preview-empty p{font-size:12px;line-height:1.7;margin:8px 0 0;font-family:var(--mono)}
+.preview-info{padding:24px 26px;border-top:1px solid var(--line)}
+.preview-info .p-tag{font-family:var(--mono);font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:var(--gold)}
+.preview-info h4{font-family:var(--serif);font-size:20px;font-weight:600;margin:10px 0 8px}
+.preview-info p{font-size:13px;color:var(--ink-dim);line-height:1.7;margin:0}
+
+/* ---------- contact ---------- */
+.contact{text-align:center;padding:130px 0;border-bottom:0}
+.contact h2{font-family:var(--serif);font-weight:600;font-size:clamp(46px,8vw,86px);line-height:1.02;margin:20px 0 0}
+.contact h2 em{font-style:italic;color:var(--gold-soft)}
+.contact p{max-width:480px;color:var(--ink-dim);line-height:1.75;margin:24px auto 36px;font-size:15px}
+.contact .eyebrow{justify-content:center}
+.contact .eyebrow::before,.contact .eyebrow::after{content:'';width:26px;height:1px;background:var(--gold)}
+
+footer{padding:28px 0;color:var(--muted);font-size:11px;font-family:var(--mono);display:flex;justify-content:space-between;letter-spacing:.02em}
+
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}
+.reveal.show{opacity:1;transform:none}
+
+@media(max-width:920px){
+  .hero-grid,.about-grid,.portfolio-layout{grid-template-columns:1fr}
+  .section-head{grid-template-columns:1fr}
+  .cards{grid-template-columns:1fr 1fr}
+  .portrait-wrap{order:-1}
+  .preview-panel{position:static}
+  .nav{display:none}
+  .menu-btn{display:block}
+}
+@media(max-width:600px){
+  .shell{width:min(100% - 40px,1180px)}
+  .cards{grid-template-columns:1fr}
+  .tl-row{grid-template-columns:1fr;gap:8px}
+  .hero{padding:60px 0 56px}
+  section{padding:70px 0}
+  .contact{padding:90px 0}
+  footer{flex-direction:column;gap:6px}
+  .hero-stats{flex-wrap:wrap;row-gap:20px}
+}
+</style>
+</head>
+<body>
+
+<header>
+<div class="shell header-inner">
+<a class="logo" href="#home">Mst Rabeya <span>Akter Shila</span></a>
+<nav class="nav">
+<a href="#about">About</a>
+<a href="#services">Services</a>
+<a href="#experience">Experience</a>
+<a href="#portfolio">Portfolio</a>
+<a class="hire" href="https://www.upwork.com/freelancers/~014ba7117b458f9d3e?mp_source=share" target="_blank">Hire me</a>
+</nav>
+</div>
+</header>
+
+<main>
+
+<section class="hero" id="home">
+<div class="shell hero-grid">
+<div class="reveal show">
+<div class="eyebrow">Social media growth & content strategy</div>
+<h1>Turning attention<br>into <em>real</em> growth.</h1>
+<p class="hero-sub">I help brands, creators and e-commerce stores build an organic presence on Instagram and TikTok — through short-form video, content systems and audience-first strategy.</p>
+<div class="hero-actions">
+<a class="btn btn-primary" href="https://www.upwork.com/freelancers/~014ba7117b458f9d3e?mp_source=share" target="_blank">Hire me on Upwork ↗</a>
+<a class="btn btn-ghost" href="#portfolio">View my work</a>
+</div>
+<div class="hero-stats">
+<div><b>5+</b><span>Years experience</span></div>
+<div><b>18K+</b><span>TikTok followers grown</span></div>
+<div><b>8</b><span>Client projects delivered</span></div>
+</div>
+</div>
+<div class="portrait-wrap reveal show">
+<div class="portrait-frame">
+<img src="assets/rabeya.png" alt="Portrait of Mst Rabeya Akter Shila">
+</div>
+<div class="portrait-tag"><b>Mst Rabeya Akter Shila</b>Instagram & TikTok growth expert</div>
+</div>
+</div>
+</section>
+
+<section id="about">
+<div class="shell about-grid reveal">
+<div class="about-photo"><img src="assets/rabeya.png" alt="Mst Rabeya Akter Shila at her desk"></div>
+<div class="about-copy">
+<div class="eyebrow">Intro</div>
+<h2 class="section-head" style="display:block;margin:16px 0 26px;font-family:var(--serif);font-weight:600;font-size:clamp(30px,4vw,42px)">A little about me</h2>
+<p>Hey, I'm <b>Mst Rabeya Akter Shila</b> — a professional content creator and social media growth strategist specializing in short-form video, audience engagement and organic growth.</p>
+<p>I help brands, creators, coaches, businesses and e-commerce stores turn social media into a powerful growth tool, from content strategy and filming through to editing and publishing.</p>
+<div class="skills">
+<span class="skill">Instagram growth</span>
+<span class="skill">TikTok strategy</span>
+<span class="skill">Reels editing</span>
+<span class="skill">Content calendars</span>
+<span class="skill">Trend research</span>
+<span class="skill">Hashtag strategy</span>
+<span class="skill">Analytics & iteration</span>
+<span class="skill">Community management</span>
+<span class="skill">Brand content & CTAs</span>
+</div>
+</div>
+</div>
+</section>
+
+<section id="services">
+<div class="shell reveal">
+<div class="section-head">
+<div class="eyebrow">What I bring</div>
+<h2>Services built for organic growth.</h2>
+<p>Everything a brand or creator needs to plan, produce and grow a consistent social presence.</p>
+</div>
+<div class="cards">
+<div class="card"><div class="num">01</div><h4>Content strategy</h4><p>Content calendars, niche research, competitor analysis and platform-focused planning.</p></div>
+<div class="card"><div class="num">02</div><h4>Short-form video</h4><p>Reels, TikToks and Shorts with hooks, storytelling, captions, B-roll and retention-focused editing.</p></div>
+<div class="card"><div class="num">03</div><h4>Organic growth</h4><p>Profile optimization, engagement systems, trend adaptation and analytics-led iteration.</p></div>
+<div class="card"><div class="num">04</div><h4>Brand content</h4><p>On-brand visuals, product content, thumbnails, covers, CTAs and consistent publishing.</p></div>
+</div>
+</div>
+</section>
+
+<section id="experience">
+<div class="shell reveal">
+<div class="section-head">
+<div class="eyebrow">Experience</div>
+<h2>Experience that drives results.</h2>
+<p>Selected professional experience in social media marketing, content creation and growth.</p>
+</div>
+<div class="timeline">
+<div class="tl-row"><div class="tl-date">Jan 2024 — Present</div><div class="tl-body"><h4>Marketing Director <span>· Eastman Chemical</span></h4><p>Led social strategy across TikTok, Instagram and YouTube — content production, campaigns, engagement, analytics and influencer research.</p></div></div>
+<div class="tl-row"><div class="tl-date">Jan 2023 — Dec 2024</div><div class="tl-body"><h4>Instagram & TikTok Growth Expert <span>· Sodexo</span></h4><p>Helped Instagram grow from 1,200 to 11,000+ and TikTok from 500 to 18,000+ organically in 60 days through content, trends, hashtags and engagement.</p></div></div>
+<div class="tl-row"><div class="tl-date">Jul 2021 — Nov 2022</div><div class="tl-body"><h4>Social Media Assistant <span>· S. Alam Group</span></h4><p>Supported Instagram and TikTok management — Reels and TikTok editing, captions, hashtags, scheduling, trend research and performance tracking.</p></div></div>
+<div class="tl-row"><div class="tl-date">5+ years</div><div class="tl-body"><h4>Social Media Marketing & Growth</h4><p>Experience across content planning, organic growth, paid advertising, brand awareness, lead generation, community management and performance analysis.</p></div></div>
+</div>
+</div>
+</section>
+
+<section id="portfolio">
+<div class="shell reveal">
+<div class="section-head">
+<div class="eyebrow">Portfolio</div>
+<h2>Work I've worked on.</h2>
+<p>Select a project to view its screenshot or video on the right.</p>
+</div>
+<div class="portfolio-layout">
+<div class="project-list" id="project-list"></div>
+<div class="preview-panel">
+<div class="preview-media" id="preview-media"></div>
+<div class="preview-info" id="preview-info"></div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="contact" id="contact" style="border-bottom:0">
+<div class="shell reveal">
+<div class="eyebrow">Let's work together</div>
+<h2>Let's grow<br>your <em>presence.</em></h2>
+<p>Need consistent content, stronger engagement or a social media growth system? Let's build it together.</p>
+<a class="btn btn-primary" href="https://www.upwork.com/freelancers/~014ba7117b458f9d3e?mp_source=share" target="_blank">Hire me on Upwork ↗</a>
+</div>
+</section>
+
+</main>
+
+<div class="shell">
+<footer>
+<span>© 2026 Mst Rabeya Akter Shila</span>
+<span>Content Creator · Social Media Growth Strategist</span>
+</footer>
+</div>
+
+<script>
+/*
+  PROJECT MEDIA — edit this list to attach real screenshots/videos.
+  For each project, set "media":
+    { type: "image", src: "assets/portfolio/project1.jpg" }
+    { type: "video", src: "assets/portfolio/project1.mp4" }
+  Leave as { type: "placeholder" } until you have the file.
+  Put your files inside an "assets/portfolio" folder next to this page.
+*/
+const PROJECTS = [
+  { id:1, title:"Building a presence on TikTok", tag:"TikTok growth", desc:"Grew a TikTok account from zero into an active, engaged presence through consistent short-form content and trend adaptation.", media:{type:"placeholder"} },
+  { id:2, title:"Download videos from Instagram account and format for TikTok", tag:"Repurposing", desc:"Repurposed existing Instagram video content into TikTok-ready formats — cropping, captions and platform-specific pacing.", media:{type:"placeholder"} },
+  { id:3, title:"Social Media", tag:"Management", desc:"End-to-end social media management covering scheduling, engagement and monthly performance reporting.", media:{type:"placeholder"} },
+  { id:4, title:"TikTok", tag:"Content production", desc:"Ongoing TikTok content production — filming, editing and publishing on a consistent schedule.", media:{type:"placeholder"} },
+  { id:5, title:"TikTok & Instagram Reels Content Creator (German)", tag:"Content creation", desc:"Produced German-language Reels and TikToks, adapting hooks and captions for a German-speaking audience.", media:{type:"placeholder"} },
+  { id:6, title:"Dog Mountain Hike", tag:"Video edit", desc:"An outdoor lifestyle edit — pacing, music sync and colour grading built for a nature and adventure audience.", media:{type:"placeholder"} },
+  { id:7, title:"New Wellness Supplement Social Media Launch", tag:"Product launch", desc:"Planned and produced launch content for a wellness supplement brand across Instagram and TikTok.", media:{type:"placeholder"} },
+  { id:8, title:"Content Creator Needed to Build Organic TikTok/Instagram Following for Vape sales", tag:"Organic growth", desc:"Built organic TikTok and Instagram content systems to grow following and engagement for an e-commerce brand.", media:{type:"placeholder"} }
+];
+
+const listEl = document.getElementById('project-list');
+const mediaEl = document.getElementById('preview-media');
+const infoEl = document.getElementById('preview-info');
+
+function renderList(){
+  listEl.innerHTML = PROJECTS.map((p,i)=>`
+    <button class="project-item${i===0?' active':''}" data-id="${p.id}">
+      <span class="p-num">${String(p.id).padStart(2,'0')}</span>
+      <span><span class="p-title">${p.title}</span><span class="p-tag">${p.tag}</span></span>
+      <span class="p-arrow">↗</span>
+    </button>`).join('');
+}
+
+function renderPreview(project){
+  mediaEl.style.opacity = 0;
+  setTimeout(()=>{
+    if(project.media.type === 'image'){
+      mediaEl.innerHTML = `<img src="${project.media.src}" alt="${project.title}">`;
+    } else if(project.media.type === 'video'){
+      mediaEl.innerHTML = `<video src="${project.media.src}" controls playsinline></video>`;
+    } else {
+      mediaEl.innerHTML = `<div class="preview-empty"><div class="icon">+</div><div style="font-family:var(--sans);font-size:14px;color:var(--ink-dim);font-weight:500">Media coming soon</div><p>Add the screenshot or video<br>for this project</p></div>`;
+    }
+    mediaEl.style.opacity = 1;
+  }, 120);
+  infoEl.innerHTML = `<div class="p-tag">${project.tag}</div><h4>${project.title}</h4><p>${project.desc}</p>`;
+}
+
+function selectProject(id){
+  const project = PROJECTS.find(p=>p.id===id);
+  document.querySelectorAll('.project-item').forEach(el=>{
+    el.classList.toggle('active', Number(el.dataset.id)===id);
+  });
+  renderPreview(project);
+}
+
+renderList();
+mediaEl.style.transition = 'opacity .25s ease';
+selectProject(PROJECTS[0].id);
+listEl.addEventListener('click', e=>{
+  const btn = e.target.closest('.project-item');
+  if(!btn) return;
+  selectProject(Number(btn.dataset.id));
+});
+
+const io = new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting&&e.target.classList.add('show')),{threshold:.1});
+document.querySelectorAll('.reveal').forEach(x=>io.observe(x));
+</script>
+</body>
+</html>
