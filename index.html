@@ -77,8 +77,8 @@ header{position:sticky;top:0;z-index:50;background:rgba(18,19,26,.86);backdrop-f
 
 /* ---------- sections ---------- */
 section{padding:100px 0;border-bottom:1px solid var(--line)}
-.section-head{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:56px}
-.section-head h2{font-family:var(--serif);font-weight:600;font-size:clamp(34px,4.5vw,52px);line-height:1.06;margin:16px 0 0}
+.section-head{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:56px;text-align:left;}
+.section-head h2{font-family:var(--serif);font-weight:600;font-size:clamp(34px,4.5vw,52px);line-height:1.06;margin:16px 0 0;text-align:left;}
 .section-head p{color:var(--ink-dim);font-size:15px;line-height:1.75;max-width:420px;margin:0}
 
 /* ---------- about ---------- */
@@ -129,6 +129,22 @@ section{padding:100px 0;border-bottom:1px solid var(--line)}
 .preview-info h4{font-family:var(--serif);font-size:20px;font-weight:600;margin:10px 0 8px}
 .preview-info p{font-size:13px;color:var(--ink-dim);line-height:1.7;margin:0}
 
+/* ---------- other experiences & modal ---------- */
+.other-exp-list{border-top:1px solid var(--line)}
+.other-exp-item{width:100%;text-align:left;background:none;border:0;border-bottom:1px solid var(--line);padding:24px 12px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;color:var(--ink);transition:background .2s}
+.other-exp-item:hover{background:var(--surface)}
+.other-exp-item h4{font-family:var(--serif);font-size:20px;font-weight:600;margin:0;color:var(--ink)}
+.other-exp-item:hover h4{color:var(--gold-soft)}
+.other-exp-item .exp-arrow{font-family:var(--mono);font-size:14px;color:var(--gold);border:1px solid var(--line-strong);padding:6px 14px;border-radius:999px}
+
+.modal-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(12,13,18,0.85);backdrop-filter:blur(8px);z-index:100;display:none;align-items:center;justify-content:center;opacity:0;transition:opacity .3s ease}
+.modal-overlay.active{display:flex;opacity:1}
+.modal-content{background:var(--surface);border:1px solid var(--line-strong);border-radius:16px;width:min(720px,calc(100% - 40px));max-height:85vh;overflow-y:auto;padding:40px;position:relative;box-shadow:0 30px 60px rgba(0,0,0,0.5)}
+.modal-close{position:absolute;top:20px;right:20px;background:var(--bg-soft);border:1px solid var(--line-strong);color:var(--ink);width:36px;height:36px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:18px;transition:.2s}
+.modal-close:hover{background:var(--gold);color:#1a1305}
+.modal-title{font-family:var(--serif);font-size:26px;font-weight:600;color:var(--gold-soft);margin:0 0 20px;padding-right:30px}
+.modal-body{color:var(--ink-dim);font-size:15px;line-height:1.8;white-space:pre-line}
+
 /* ---------- contact ---------- */
 .contact{text-align:center;padding:130px 0;border-bottom:0}
 .contact h2{font-family:var(--serif);font-weight:600;font-size:clamp(46px,8vw,86px);line-height:1.02;margin:20px 0 0}
@@ -173,6 +189,7 @@ footer{padding:28px 0;color:var(--muted);font-size:11px;font-family:var(--mono);
 <a href="#services">Services</a>
 <a href="#experience">Experience</a>
 <a href="#portfolio">Portfolio</a>
+<a href="#other-experience">Other Experiences</a>
 <a class="hire" href="https://www.upwork.com/freelancers/~014ba7117b458f9d3e?mp_source=share" target="_blank">Hire me</a>
 </nav>
 </div>
@@ -230,8 +247,10 @@ footer{padding:28px 0;color:var(--muted);font-size:11px;font-family:var(--mono);
 <section id="services">
 <div class="shell reveal">
 <div class="section-head">
+<div>
 <div class="eyebrow">What I bring</div>
 <h2>Services built for organic growth.</h2>
+</div>
 <p>Everything a brand or creator needs to plan, produce and grow a consistent social presence.</p>
 </div>
 <div class="cards">
@@ -246,8 +265,10 @@ footer{padding:28px 0;color:var(--muted);font-size:11px;font-family:var(--mono);
 <section id="experience">
 <div class="shell reveal">
 <div class="section-head">
+<div>
 <div class="eyebrow">Experience</div>
 <h2>Experience that drives results.</h2>
+</div>
 <p>Selected professional experience in social media marketing, content creation and growth.</p>
 </div>
 <div class="timeline">
@@ -262,8 +283,10 @@ footer{padding:28px 0;color:var(--muted);font-size:11px;font-family:var(--mono);
 <section id="portfolio">
 <div class="shell reveal">
 <div class="section-head">
+<div>
 <div class="eyebrow">Portfolio</div>
 <h2>Work I've worked on.</h2>
+</div>
 <p>Select a project to view its screenshot or video on the right.</p>
 </div>
 <div class="portfolio-layout">
@@ -273,6 +296,20 @@ footer{padding:28px 0;color:var(--muted);font-size:11px;font-family:var(--mono);
 <div class="preview-info" id="preview-info"></div>
 </div>
 </div>
+</div>
+</section>
+
+<!-- OTHER EXPERIENCES SECTION -->
+<section id="other-experience">
+<div class="shell reveal">
+<div class="section-head">
+<div>
+<div class="eyebrow">Specialized Skills</div>
+<h2>Other Experiences</h2>
+</div>
+<p>Click on any expertise title below to view full details in popup.</p>
+</div>
+<div class="other-exp-list" id="other-exp-list"></div>
 </div>
 </section>
 
@@ -292,6 +329,15 @@ footer{padding:28px 0;color:var(--muted);font-size:11px;font-family:var(--mono);
 <span>© 2026 Mst Rabeya Akter Shila</span>
 <span>Content Creator · Social Media Growth Strategist</span>
 </footer>
+</div>
+
+<!-- POPUP MODAL -->
+<div class="modal-overlay" id="exp-modal">
+  <div class="modal-content">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <h3 class="modal-title" id="modal-title"></h3>
+    <div class="modal-body" id="modal-body"></div>
+  </div>
 </div>
 
 <script>
@@ -364,6 +410,113 @@ const PROJECTS = [
   { id:6, title:"Dog Mountain Hike", tag:"Video edit", desc:"An outdoor lifestyle edit — pacing, music sync and colour grading built for a nature and audience.", media:{type:"placeholder"} },
   { id:7, title:"New Wellness Supplement Social Media Launch", tag:"Product launch", desc:"Planned and produced launch content for a wellness supplement brand across Instagram and TikTok.", media:{type:"placeholder"} },
   { id:8, title:"Content Creator Needed to Build Organic TikTok/Instagram Following for Vape sales", tag:"Organic growth", desc:"Built organic TikTok and Instagram content systems to grow following and engagement for an e-commerce brand.", media:{type:"placeholder"} }
+];
+
+const OTHER_EXPERIENCES = [
+  {
+    title: "Social media marketing | product & business | marketing & growth",
+    desc: `With 5+ years of experience in social media marketing, I help businesses, brands, and entrepreneurs build a stronger online presence through strategic marketing, content optimization, audience engagement, and growth-focused campaigns.
+
+My expertise includes social media management, organic growth strategies, content planning, content creation, community management, paid advertising, brand awareness, lead generation, audience growth, and performance analysis. I have worked with different types of products and businesses, helping them improve online visibility, reach the right audience, increase engagement, and achieve measurable marketing results.
+
+I specialize in creating customized social media strategies based on each business's goals and target audience. Whether the objective is to increase brand awareness, grow an engaged audience, generate qualified leads, drive website traffic, or increase sales, I develop practical strategies that combine organic and paid marketing approaches for sustainable growth.
+
+My approach focuses on understanding the brand, researching the target audience, creating relevant content, analyzing performance, and continuously optimizing the strategy based on real data. I believe effective social media marketing is not just about posting content but about building meaningful connections, increasing visibility, and turning audience attention into real business opportunities.
+
+Over the years, I have successfully completed projects across different industries while maintaining a strong focus on quality, communication, consistency, and client satisfaction. My goal is to help businesses build a recognizable digital presence, connect with the right audience, and achieve long-term growth through effective social media marketing.
+
+Key areas of expertise:
+social media marketing, social media management, social media strategy, content creation, content planning, content marketing, instagram marketing, instagram growth, tiktok marketing, tiktok growth, facebook marketing, brand awareness, audience engagement, community management, organic growth, social media analytics, digital marketing, lead generation, influencer marketing, marketing strategy, online marketing, conversion optimization, social media advertising, paid advertising, content strategy`
+  },
+  {
+    title: "Virtual Assistant | Administrative Support Specialist",
+    desc: `Dedicated and detail-oriented virtual assistant with hands-on experience supporting businesses, entrepreneurs, and professionals with their daily administrative and online operations. Skilled in email management, calendar management, data entry, web research, internet research, lead generation, customer support, appointment scheduling, file organization, CRM management, and workflow coordination.
+
+Experienced in handling multiple tasks efficiently while maintaining accuracy, organization, and attention to detail. Able to manage routine administrative responsibilities, organize information, communicate with clients and team members, and provide reliable support to keep daily business operations running smoothly.
+
+Proficient in using modern productivity and collaboration tools, including Google Workspace (Docs, Sheets, Drive, and Calendar), Microsoft Office (Excel, Word, and PowerPoint), Trello, Asana, Notion, Slack, and ChatGPT. Comfortable learning new tools and adapting to different workflows, systems, and business requirements.
+
+Focused on helping clients save valuable time, reduce their workload, stay organized, and improve productivity through dependable virtual assistance and proactive support. Committed to delivering accurate, high-quality work, meeting deadlines consistently, maintaining clear professional communication, and building long-term working relationships based on reliability, trust, and client satisfaction.
+
+Key areas of expertise:
+virtual assistant, virtual assistance, administrative assistant, administrative support, data entry, email management, calendar management, web research, internet research, lead generation, customer support, appointment scheduling, CRM management, file management, google workspace, microsoft office, project management, workflow management, executive virtual assistant, remote assistant`
+  },
+  {
+    title: "Lead Generation Specialist | Prospect Research & Outreach Support",
+    desc: `Detail-oriented lead generation specialist with experience in identifying high-quality prospects, conducting in-depth market research, and building targeted lead lists to help businesses generate new opportunities and grow their sales pipeline. Skilled in B2B lead generation, prospect research, contact list building, email research, LinkedIn research, data collection, and targeted prospecting.
+
+Experienced in finding and qualifying potential leads, identifying key decision-makers, collecting and verifying contact information, building organized lead databases, preparing CRM-ready data, and delivering accurate prospect lists tailored to specific business requirements. Strong focus on data accuracy, relevance, consistency, and lead quality to ensure every prospect has genuine potential for business development.
+
+Proficient in using tools and platforms such as Google Sheets, Microsoft Excel, LinkedIn, Apollo, Crunchbase, Google Search, and various lead research and data collection tools. Comfortable researching companies, industries, job titles, locations, and other relevant criteria to identify the right prospects and build highly targeted lead lists.
+
+Focused on helping businesses expand their reach, connect with the right decision-makers, generate qualified opportunities, and build stronger sales pipelines through reliable and well-researched lead generation. Committed to delivering accurate work, meeting deadlines, maintaining clear professional communication, and providing consistent results that support long-term business growth.
+
+Key areas of expertise:
+lead generation specialist, b2b lead generation, lead generation, prospect research, lead research, linkedin lead generation, linkedin research, email research, email list building, contact list building, lead list building, data collection, web research, prospecting, qualified leads, decision maker research, crm data entry, sales prospecting, targeted lead generation, b2b prospect list`
+  },
+  {
+    title: "Meta Ads Expert | Facebook & Instagram Paid Advertising Specialist",
+    desc: `Results-driven Meta Ads specialist with experience helping businesses increase brand awareness, generate qualified leads, drive targeted website traffic, and improve conversions through strategic Facebook and Instagram advertising campaigns. Experienced in campaign setup, audience research, audience targeting, custom audiences, lookalike audiences, retargeting, conversion tracking, lead generation, traffic, engagement, and sales campaigns.
+
+Skilled in developing effective advertising strategies based on specific business goals, researching and identifying target audiences, creating structured campaigns, managing ad budgets, monitoring performance, analyzing campaign data, and continuously optimizing campaigns to improve reach, engagement, lead quality, conversions, and return on investment. Strong understanding of audience behavior, ad creatives, copy optimization, funnel strategy, and customer journey mapping.
+
+Experienced with Meta Business Suite, Meta Ads Manager, Meta Pixel, conversion tracking, campaign analytics, performance reporting, A/B testing, audience segmentation, competitor research, creative testing, budget management, cost optimization, lead nurturing, and marketing analytics. Focused on identifying opportunities for improvement and making data-driven decisions to achieve stronger and more consistent advertising results.
+
+Committed to providing transparent, reliable, and performance-focused Meta advertising solutions with clear communication and attention to detail. Focused on helping businesses achieve measurable and sustainable growth through strategic campaign management, continuous optimization, and advertising strategies aligned with long-term marketing objectives.
+
+Key areas of expertise:
+meta ads specialist, facebook ads, instagram ads, meta advertising, facebook advertising, meta ads manager, campaign management, lead generation, conversion campaigns, sales campaigns, retargeting campaigns, lookalike audiences, custom audiences, audience targeting, meta pixel, conversion tracking, a/b testing, ad campaign optimization, performance marketing, paid social media`
+  },
+  {
+    title: "Social Media Content Scheduling & Publishing",
+    desc: `Creating High-Impact Social Media Posts
+Crafting compelling social media content requires a mix of creativity, strategic thinking, and audience insight. Below are the essential elements for creating posts that truly connect and perform:
+
+1. Understand Your Audience: Identify demographics, interests, and tailored messaging.
+2. Deliver a Clear Message: Concise copy with strong Calls-to-Action.
+3. Focus on Visual Impact: High-quality visuals adhering to brand consistency.
+4. Vary Your Content: Multiple formats providing value-driven content.
+5. Be Timely and Relevant: Engage with trending topics and seasonal themes.
+6. Use Hashtags & Keywords Wisely: Target SEO-friendly discovery.
+7. Drive Engagement: Ask questions and use interactive features like polls.
+8. Maintain a Consistent Schedule: Content calendars posting at peak times.
+9. Leverage User-Generated Content: Share community highlights & contests.
+10. Optimize for Mobile: Mobile-first design & vertical video formats.
+11. Monitor & Analyze Performance: Use analytics tools for data-driven improvement.
+12. Innovate and Experiment: A/B testing and creative exploration.
+13. Build Emotional Connection: Tell stories and remain authentic.
+14. Stay Ethical & Transparent: Follow guidelines and disclose partnerships.
+15. Adapt and Evolve: Stay current with algorithm shifts and listen to feedback.
+
+Key areas of expertise:
+social media scheduling, social media publishing, content scheduling, content publishing, social media management, post scheduling, social media calendar, content calendar, instagram scheduling, facebook scheduling, tiktok scheduling, linkedin scheduling, social media automation, scheduled posts, content management, social media planner, social media posting, social media scheduler, publishing management, social media marketing`
+  },
+  {
+    title: "Instagram, TikTok Growth Expert & Content Creation Pro",
+    desc: `With 5+ years of experience in social media marketing and content creation, I have successfully worked on numerous Instagram and TikTok projects for different businesses, brands, and creators. I specialize in creating engaging short-form content, managing social media accounts, and supporting organic growth through consistent and strategic content.
+
+My experience includes Instagram Reels, TikTok videos, content creation, content editing, content planning, caption writing, hashtag research, trend research, audience engagement, social media management, and performance tracking. I have worked with different types of content and industries, adapting my approach based on each project's needs and target audience.
+
+Over the years, I have completed multiple successful projects involving Instagram and TikTok content creation and management. I understand what makes short-form content engaging and how to create content that is relevant, visually appealing, and optimized for each platform.
+
+I am experienced in using tools such as CapCut, Canva, Adobe Premiere Pro, DaVinci Resolve, Meta Business Suite, and other social media and content creation tools to deliver high-quality work.
+
+Key areas of expertise:
+instagram growth, tiktok growth, instagram marketing, tiktok marketing, instagram manager, tiktok manager, social media growth, organic growth, instagram reels, tiktok videos, short-form content, content creation, content editing, reels creation, tiktok content creation, instagram content creation, social media management, content strategy, content planning, social media strategy, audience growth, follower growth, audience engagement, community management, trend research, viral content, viral reels, viral tiktok, hashtag research, caption writing, instagram seo, tiktok seo`
+  },
+  {
+    title: "Social Media Growth Hacker | Instagram & TikTok Specialist",
+    desc: `I’m a results-driven Social Media Growth Hacker who helps brands, creators, and businesses explode their presence on Instagram and TikTok using viral content, growth tactics, and platform-smart strategies. I don’t believe in fake followers or bots — I focus on real, sustainable audience growth built on content that performs.
+
+What I Do:
+✅ Growth-focused content strategy
+✅ Viral Reels and TikTok creation
+✅ Hashtag & trend research
+✅ Engagement strategy & account optimization
+✅ Analytics and performance tracking
+
+I’ve helped clients grow from 0 to 50K+ followers using organic methods only — by understanding the algorithm, mastering short-form content, and delivering consistent value to the audience.`
+  }
 ];
 
 const listEl = document.getElementById('project-list');
@@ -445,7 +598,36 @@ function selectProject(id){
   renderPreview(project);
 }
 
+// Render Other Experiences List
+function renderOtherExperiences(){
+  const container = document.getElementById('other-exp-list');
+  container.innerHTML = OTHER_EXPERIENCES.map((exp, idx) => `
+    <button class="other-exp-item" onclick="openModal(${idx})">
+      <h4>${exp.title}</h4>
+      <span class="exp-arrow">View Details ↗</span>
+    </button>
+  `).join('');
+}
+
+function openModal(index){
+  const exp = OTHER_EXPERIENCES[index];
+  document.getElementById('modal-title').innerText = exp.title;
+  document.getElementById('modal-body').innerText = exp.desc;
+  const modal = document.getElementById('exp-modal');
+  modal.classList.add('active');
+}
+
+function closeModal(){
+  document.getElementById('exp-modal').classList.remove('active');
+}
+
+// Close modal on background click
+document.getElementById('exp-modal').addEventListener('click', function(e){
+  if(e.target === this) closeModal();
+});
+
 renderList();
+renderOtherExperiences();
 mediaEl.style.transition = 'opacity .25s ease';
 selectProject(PROJECTS[0].id);
 listEl.addEventListener('click', e=>{
