@@ -299,7 +299,16 @@ footer{padding:28px 0;color:var(--muted);font-size:11px;font-family:var(--mono);
 
 <script>
 const PROJECTS = [
-  { id:1, title:"Building a presence on TikTok", tag:"TikTok growth", desc:"Grew a TikTok account from zero into an active, engaged presence through consistent short-form content and trend adaptation.", media:{type:"placeholder"} },
+  { 
+    id: 1, 
+    title: "Building a presence on TikTok", 
+    tag: "TikTok growth", 
+    desc: "Grew a TikTok account from zero into an active, engaged presence through consistent short-form content and trend adaptation.", 
+    media: {
+      type: "gallery",
+      images: ["img-1.PNG", "img-2.PNG", "img-3.PNG", "img-4.PNG", "img-5.png"]
+    } 
+  },
   { id:2, title:"Download videos from Instagram account and format for TikTok", tag:"Repurposing", desc:"Repurposed existing Instagram video content into TikTok-ready formats — cropping, captions and platform-specific pacing.", media:{type:"placeholder"} },
   { id:3, title:"Social Media", tag:"Management", desc:"End-to-end social media management covering scheduling, engagement and monthly performance reporting.", media:{type:"placeholder"} },
   { id:4, title:"TikTok", tag:"Content production", desc:"Ongoing TikTok content production — filming, editing and publishing on a consistent schedule.", media:{type:"placeholder"} },
@@ -313,6 +322,9 @@ const listEl = document.getElementById('project-list');
 const mediaEl = document.getElementById('preview-media');
 const infoEl = document.getElementById('preview-info');
 
+let currentImageIndex = 0;
+let currentGalleryImages = [];
+
 function renderList(){
   listEl.innerHTML = PROJECTS.map((p,i)=>`
     <button class="project-item${i===0?' active':''}" data-id="${p.id}">
@@ -322,10 +334,41 @@ function renderList(){
     </button>`).join('');
 }
 
+function updateGalleryImage(){
+  const imgEl = document.getElementById('gallery-img');
+  const countEl = document.getElementById('gallery-count');
+  if(imgEl && currentGalleryImages.length > 0){
+    imgEl.src = currentGalleryImages[currentImageIndex];
+    if(countEl) countEl.innerText = `${currentImageIndex + 1} / ${currentGalleryImages.length}`;
+  }
+}
+
+function nextGalleryImage(){
+  if(currentGalleryImages.length === 0) return;
+  currentImageIndex = (currentImageIndex + 1) % currentGalleryImages.length;
+  updateGalleryImage();
+}
+
+function prevGalleryImage(){
+  if(currentGalleryImages.length === 0) return;
+  currentImageIndex = (currentImageIndex - 1 + currentGalleryImages.length) % currentGalleryImages.length;
+  updateGalleryImage();
+}
+
 function renderPreview(project){
   mediaEl.style.opacity = 0;
   setTimeout(()=>{
-    if(project.media.type === 'image'){
+    if(project.media.type === 'gallery'){
+      currentGalleryImages = project.media.images;
+      currentImageIndex = 0;
+      mediaEl.innerHTML = `
+        <div style="position:relative; width:100%; height:100%; display:flex; align-items:center; justify-content:center; background:#181a23;">
+          <img id="gallery-img" src="${currentGalleryImages[0]}" alt="${project.title}" style="max-height:100%; max-width:100%; object-fit:contain;">
+          <button onclick="prevGalleryImage()" style="position:absolute; left:10px; top:50%; transform:translateY(-50%); background:rgba(0,0,0,0.6); color:#fff; border:none; padding:8px 12px; cursor:pointer; border-radius:4px; font-weight:bold;">❮</button>
+          <button onclick="nextGalleryImage()" style="position:absolute; right:10px; top:50%; transform:translateY(-50%); background:rgba(0,0,0,0.6); color:#fff; border:none; padding:8px 12px; cursor:pointer; border-radius:4px; font-weight:bold;">❯</button>
+          <span id="gallery-count" style="position:absolute; bottom:10px; right:10px; background:rgba(0,0,0,0.7); color:#fff; font-size:11px; padding:3px 8px; border-radius:10px; font-family:var(--mono);">1 / ${currentGalleryImages.length}</span>
+        </div>`;
+    } else if(project.media.type === 'image'){
       mediaEl.innerHTML = `<img src="${project.media.src}" alt="${project.title}">`;
     } else if(project.media.type === 'video'){
       mediaEl.innerHTML = `<video src="${project.media.src}" controls playsinline></video>`;
