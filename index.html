@@ -82,13 +82,11 @@ section{padding:100px 0;border-bottom:1px solid var(--line)}
 .section-head p{color:var(--ink-dim);font-size:15px;line-height:1.75;max-width:420px;margin:0}
 
 /* ---------- about ---------- */
-.about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:64px;align-items:start}
-.about-photo{border-radius:14px;overflow:hidden;border:1px solid var(--line-strong)}
-.about-photo img{width:100%;height:440px;object-fit:cover;object-position:top center}
-.about-copy p{font-size:16px;color:var(--ink-dim);line-height:1.85;margin:0 0 20px}
+.about-copy p{font-size:17px;color:var(--ink-dim);line-height:1.85;margin:0 0 20px;max-width:800px}
 .about-copy b{color:var(--ink);font-weight:600}
-.skills{display:flex;flex-wrap:wrap;gap:9px;margin-top:32px}
-.skill{border:1px solid var(--line-strong);padding:9px 16px;border-radius:999px;font-family:var(--mono);font-size:11px;color:var(--ink-dim);letter-spacing:.03em}
+.skills{display:flex;flex-wrap:wrap;gap:10px;margin-top:36px;max-width:850px}
+.skill{border:1px solid var(--line-strong);padding:10px 18px;border-radius:999px;font-family:var(--mono);font-size:12px;color:var(--ink-dim);letter-spacing:.03em;background:var(--bg-soft);transition:.2s}
+.skill:hover{border-color:var(--gold);color:var(--gold-soft)}
 
 /* ---------- services ---------- */
 .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
@@ -145,7 +143,7 @@ footer{padding:28px 0;color:var(--muted);font-size:11px;font-family:var(--mono);
 .reveal.show{opacity:1;transform:none}
 
 @media(max-width:920px){
-  .hero-grid,.about-grid,.portfolio-layout{grid-template-columns:1fr}
+  .hero-grid,.portfolio-layout{grid-template-columns:1fr}
   .section-head{grid-template-columns:1fr}
   .cards{grid-template-columns:1fr 1fr}
   .portrait-wrap{order:-1}
@@ -174,27 +172,26 @@ footer{padding:28px 0;color:var(--muted);font-size:11px;font-family:var(--mono);
 <a href="#about">About</a>
 <a href="#services">Services</a>
 <a href="#experience">Experience</a>
-<section id="about">
-<div class="shell reveal">
-<div class="about-copy">
-<div class="eyebrow">Intro</div>
-<h2 class="section-head" style="display:block;margin:16px 0 26px;font-family:var(--serif);font-weight:600;font-size:clamp(30px,4vw,42px)">A little about me</h2>
-<p>Hey, I'm <b>Mst Rabeya Akter Shila</b> — a professional content creator and social media growth strategist specializing in short-form video, audience engagement and organic growth.</p>
-<p>I help brands, creators, coaches, businesses and e-commerce stores turn social media into a powerful growth tool, from content strategy and filming through to editing and publishing.</p>
-<div class="skills">
-<span class="skill">Instagram growth</span>
-<span class="skill">TikTok strategy</span>
-<span class="skill">Reels editing</span>
-<span class="skill">Content calendars</span>
-<span class="skill">Trend research</span>
-<span class="skill">Hashtag strategy</span>
-<span class="skill">Analytics & iteration</span>
-<span class="skill">Community management</span>
-<span class="skill">Brand content & CTAs</span>
+<a href="#portfolio">Portfolio</a>
+<a class="hire" href="https://www.upwork.com/freelancers/~014ba7117b458f9d3e?mp_source=share" target="_blank">Hire me</a>
+</nav>
 </div>
+</header>
+
+<main>
+
+<section class="hero" id="home">
+<div class="shell hero-grid">
+<div class="reveal show">
+<div class="eyebrow">Social media growth & content strategy</div>
+<h1>Turning attention<br>into <em>real</em> growth.</h1>
+<p class="hero-sub">I help brands, creators and e-commerce stores build an organic presence on Instagram and TikTok — through short-form video, content systems and audience-first strategy.</p>
+<div class="hero-actions">
+<a class="btn btn-primary" href="https://www.upwork.com/freelancers/~014ba7117b458f9d3e?mp_source=share" target="_blank">Hire me on Upwork ↗</a>
+<a class="btn btn-ghost" href="#portfolio">View my work</a>
 </div>
-</div>
-</section>
+<div class="hero-stats">
+<div><b>5+</b><span>Years experience</span></div>
 <div><b>18K+</b><span>TikTok followers grown</span></div>
 <div><b>8</b><span>Client projects delivered</span></div>
 </div>
@@ -209,11 +206,10 @@ footer{padding:28px 0;color:var(--muted);font-size:11px;font-family:var(--mono);
 </section>
 
 <section id="about">
-<div class="shell about-grid reveal">
-<div class="about-photo"><img src="profile.jpg" alt="Mst Rabeya Akter Shila at her desk"></div>
+<div class="shell reveal">
 <div class="about-copy">
 <div class="eyebrow">Intro</div>
-<h2 class="section-head" style="display:block;margin:16px 0 26px;font-family:var(--serif);font-weight:600;font-size:clamp(30px,4vw,42px)">A little about me</h2>
+<h2 style="font-family:var(--serif);font-weight:600;font-size:clamp(32px,4.5vw,48px);margin:16px 0 28px;color:var(--ink);">A little about me</h2>
 <p>Hey, I'm <b>Mst Rabeya Akter Shila</b> — a professional content creator and social media growth strategist specializing in short-form video, audience engagement and organic growth.</p>
 <p>I help brands, creators, coaches, businesses and e-commerce stores turn social media into a powerful growth tool, from content strategy and filming through to editing and publishing.</p>
 <div class="skills">
